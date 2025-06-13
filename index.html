@@ -96,6 +96,8 @@
             border: 3px solid #8d6e63;
             background: #fff;
             padding: 8px;
+            transition: box-shadow 0.2s, border-color 0.2s;
+            object-fit: cover;
         }
         footer {
             width: 100%;
@@ -121,7 +123,7 @@
     <div class="spacer"></div> <!-- Spacer for fixed nav -->
     <div style="display: flex; align-items: center; justify-content: flex-start; width: 100%; max-width: 900px; margin-top: 2rem; margin-bottom: 1.5rem;">
         <h1 style="flex: 1; text-align: left; margin: 0;">Earth's Cutest Animal: Otters</h1>
-        <img class="otter-img" src="360_F_907793093_RnqmCuOT459M0U2nkCBpBUE4hImvOFqI.jpg" alt="Real life otter" style="margin-left: 2rem; max-width: 480px; width: 65vw;">
+        <img class="otter-img" src="otter-game-images/360_F_907793093_RnqmCuOT459M0U2nkCBpBUE4hImvOFqI.jpg" alt="Real life otter" style="margin-left: 2rem; max-width: 480px; width: 65vw;">
     </div>
     <section id="history">
         <h2>History of Otters</h2>
@@ -131,39 +133,71 @@
     </section>
     <section id="types">
         <h2>Types of Otters</h2>
-        <p>There are 13 species of otters, including the sea otter, river otter, and giant otter. Each has unique traits and habitats.</p>
+        <p>There are 13 species of otters, each with unique traits and habitats. Here are a few of the most well-known types:</p>
+        <ul style="text-align:left; color:#e0f7fa; font-size:1.1rem; margin: 1.5rem auto; max-width: 500px; list-style-type: disc; padding-left: 1.5rem;">
+            <li style="margin-bottom: 1.2em;"><strong>North American River Otter</strong>: Medium-sized, sleek, and playful. They have thick, water-repellent fur, webbed feet, and a muscular tail. Known for their energetic swimming and sliding on mud or snow.</li>
+            <li style="margin-bottom: 1.2em;"><strong>Sea Otter</strong>: The heaviest otter species, with dense, soft fur (the densest of any animal). They use rocks to crack open shellfish and often float on their backs in kelp forests. Sea otters have short tails and large, webbed hind feet.</li>
+            <li style="margin-bottom: 1.2em;"><strong>Giant Otter</strong>: Native to South America, these are the largest otters, reaching up to 6 feet in length. They have long, streamlined bodies, large webbed feet, and a distinctive white throat patch. Giant otters are highly social and vocal.</li>
+            <li style="margin-bottom: 1.2em;"><strong>Asian Small-Clawed Otter</strong>: The smallest otter species. They have short claws that don’t extend beyond their fingers, making them very dexterous. Their fur is brown above and lighter below, and they are highly social, living in large family groups.</li>
+            <li style="margin-bottom: 1.2em;"><strong>European Otter</strong>: Also called the Eurasian otter, they have a long, slender body, short legs, and a broad, flattened head. Their fur is brown with a lighter underside, and they are excellent swimmers, found in rivers, lakes, and coastal areas.</li>
+        </ul>
+        <p>All otters share adaptations for aquatic life, such as webbed feet, streamlined bodies, and thick fur for insulation. Their playful behavior and intelligence make them fascinating to observe in the wild.</p>
     </section>
     <section id="love">
         <h2>Love of Otters from the Author</h2>
-        <p>The author adores otters for their cuteness, playfulness, and loving nature. Otters bring joy and inspiration every day!</p>
+        <p>The author, Isabella Cuaresma, did not know a specific time when she did not love otters. As a kid, she always found them adorable, cute, and fuzzy. She especially loved their friendly and playful personality. Watching otters swim and play brought her endless joy and inspiration. Their ability to hold hands while floating, their clever use of tools, and their strong family bonds made otters even more endearing to her. Isabella believes that otters remind us to embrace curiosity, kindness, and fun in our own lives.</p>
     </section>
     <section id="game">
         <h2>Game</h2>
-        <p>Drag the fish to the otter to feed it and earn points!</p>
-        <p style="color: #b2ebf2; font-size: 1rem;">Did you know? Otters love to eat fish, and they are excellent hunters! Try to feed the otter as many fish as you can.</p>
-        <div id="game-container" style="display: flex; flex-direction: column; align-items: center;">
-            <div id="timer" style="font-size: 1.3rem; color: #e0f7fa; margin-bottom: 0.5rem;">Time: 30</div>
-            <div id="score" style="font-size: 1.3rem; color: #e0f7fa; margin-bottom: 1rem;">Score: 0</div>
-            <div style="display: flex; gap: 2rem; align-items: flex-end;">
-                <div id="fish-area" style="display: flex; flex-direction: column; gap: 1rem;">
-                    <img src="https://cdn.pixabay.com/photo/2013/07/12/13/58/fish-147277_1280.png" draggable="true" class="fish" style="width: 60px; cursor: grab;" alt="Fish">
-                    <img src="https://cdn.pixabay.com/photo/2013/07/12/13/58/fish-147277_1280.png" draggable="true" class="fish" style="width: 60px; cursor: grab;" alt="Fish">
-                    <img src="https://cdn.pixabay.com/photo/2013/07/12/13/58/fish-147277_1280.png" draggable="true" class="fish" style="width: 60px; cursor: grab;" alt="Fish">
+        <button id="start-game-btn" style="margin-bottom: 2rem; padding: 0.8rem 2rem; font-size: 1.2rem; background: #ffd600; color: #006064; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Start Game</button>
+        <div id="game-content" style="display:none;">
+            <p>Drag the fish to the otter to feed it and earn points!</p>
+            <p style="color: #b2ebf2; font-size: 1rem;">Did you know? Otters love to eat fish, and they are excellent hunters! Try to feed the otter as many fish as you can.</p>
+            <div id="game-container" style="display: flex; flex-direction: column; align-items: center;">
+                <div id="timer" style="font-size: 1.3rem; color: #e0f7fa; margin-bottom: 0.5rem;">Time: 30</div>
+                <div id="score" style="font-size: 1.3rem; color: #e0f7fa; margin-bottom: 1rem;">Score: 0</div>
+                <div style="display: flex; gap: 2rem; align-items: flex-end;">
+                    <div id="fish-area" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+                    <img id="otter-drop" src="otter-game-images/images.jpeg" style="width: 140px; border-radius: 20px; border: 3px solid #8d6e63; background: #fff; padding: 8px; transition: box-shadow 0.2s, border-color 0.2s; object-fit: cover;" alt="Otter">
                 </div>
-                <img id="otter-drop" src="https://pngimg.com/d/otter_PNG16.png" style="width: 140px; border-radius: 20px; border: 3px solid #8d6e63; background: #fff; padding: 8px;" alt="Otter">
             </div>
+            <div id="end-screen" style="display:none; margin-top:2rem; background:#004d40; color:#e0f7fa; padding:2rem; border-radius:16px; font-size:1.5rem;"></div>
         </div>
-        <div id="end-screen" style="display:none; margin-top:2rem; background:#004d40; color:#e0f7fa; padding:2rem; border-radius:16px; font-size:1.5rem;"></div>
         <script>
-            let score = 0;
-            let timeLeft = 30;
-            let timerInterval;
-            const scoreDisplay = document.getElementById('score');
-            const timerDisplay = document.getElementById('timer');
-            const otter = document.getElementById('otter-drop');
-            const fishArea = document.getElementById('fish-area');
-            const endScreen = document.getElementById('end-screen');
-            function startTimer() {
+            document.addEventListener('DOMContentLoaded', function() {
+                var btn = document.getElementById('start-game-btn');
+                var gameContent = document.getElementById('game-content');
+                if (btn && gameContent) {
+                    btn.onclick = function() {
+                        btn.style.display = 'none';
+                        gameContent.style.display = 'block';
+                        if (typeof window.startOtterGame === 'function') {
+                            window.startOtterGame();
+                        }
+                    };
+                }
+            });
+            window.startOtterGame = function() {
+                let score = 0;
+                let timeLeft = 30;
+                let timerInterval;
+                const scoreDisplay = document.getElementById('score');
+                const timerDisplay = document.getElementById('timer');
+                const otter = document.getElementById('otter-drop');
+                const fishArea = document.getElementById('fish-area');
+                const endScreen = document.getElementById('end-screen');
+                scoreDisplay.textContent = 'Score: 0';
+                timerDisplay.textContent = 'Time: 30';
+                fishArea.innerHTML = '';
+                for (let i = 0; i < 4; i++) {
+                    fishArea.appendChild(createFish('good'));
+                }
+                Array.from(fishArea.querySelectorAll('.fish')).forEach(fish => {
+                    fish.addEventListener('dragstart', (e) => {
+                        e.dataTransfer.setData('text/plain', 'fish');
+                    });
+                });
+                clearInterval(timerInterval);
                 timerInterval = setInterval(() => {
                     timeLeft--;
                     timerDisplay.textContent = 'Time: ' + timeLeft;
@@ -172,49 +206,55 @@
                         endGame();
                     }
                 }, 1000);
-            }
-            function endGame() {
-                // Disable dragging
-                document.querySelectorAll('.fish').forEach(fish => fish.setAttribute('draggable', 'false'));
-                otter.style.opacity = 0.5;
-                fishArea.style.opacity = 0.5;
-                endScreen.style.display = 'block';
-                endScreen.innerHTML = `<strong>Time's up!</strong><br>Your final score: <span style='color:#ffd600;'>${score}</span><br><button onclick='location.reload()' style='margin-top:1rem; padding:0.5rem 1.5rem; font-size:1rem; border-radius:8px; border:none; background:#ffd600; color:#006064; font-weight:bold; cursor:pointer;'>Play Again</button>`;
-            }
-            document.querySelectorAll('.fish').forEach(fish => {
-                fish.addEventListener('dragstart', (e) => {
-                    e.dataTransfer.setData('text/plain', 'fish');
-                });
-            });
-            otter.addEventListener('dragover', (e) => {
-                e.preventDefault();
-            });
-            otter.addEventListener('drop', (e) => {
-                e.preventDefault();
-                const fish = document.querySelector('.fish[draggable="true"]');
-                if (fish && timeLeft > 0) {
-                    fish.parentNode.removeChild(fish);
-                    score++;
-                    scoreDisplay.textContent = 'Score: ' + score;
-                    // Add a new fish after drop
-                    const newFish = document.createElement('img');
-                    newFish.src = fish.src;
-                    newFish.draggable = true;
-                    newFish.className = 'fish';
-                    newFish.style.width = '60px';
-                    newFish.style.cursor = 'grab';
-                    newFish.alt = 'Fish';
-                    newFish.addEventListener('dragstart', (e) => {
+                function endGame() {
+                    Array.from(document.querySelectorAll('.fish')).forEach(fish => fish.setAttribute('draggable', 'false'));
+                    otter.style.opacity = 0.5;
+                    fishArea.style.opacity = 0.5;
+                    endScreen.style.display = 'block';
+                    endScreen.innerHTML = `<strong>Time's up!</strong><br>Your final score: <span style='color:#ffd600;'>${score}</span><br><button onclick='location.reload()' style='margin-top:1rem; padding:0.5rem 1.5rem; font-size:1rem; border-radius:8px; border:none; background:#ffd600; color:#006064; font-weight:bold; cursor:pointer;'>Play Again</button>`;
+                }
+                function createFish(type) {
+                    const img = document.createElement('img');
+                    img.src = 'otter-game-images/fish.png';
+                    img.className = 'fish good-fish';
+                    img.draggable = true;
+                    img.style.width = '60px';
+                    img.style.cursor = 'grab';
+                    img.alt = 'Fish';
+                    img.addEventListener('dragstart', (e) => {
                         e.dataTransfer.setData('text/plain', 'fish');
                     });
-                    fishArea.appendChild(newFish);
+                    return img;
                 }
-            });
-            startTimer();
+                otter.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                });
+                otter.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    let fish = document.elementFromPoint(e.clientX, e.clientY);
+                    if (fish === otter) {
+                        fish = Array.from(document.querySelectorAll('.fish')).find(f => f.draggable === false);
+                    }
+                    if (!fish || !fish.classList || !fish.classList.contains('fish')) {
+                        fish = document.querySelector('.fish[draggable="true"]');
+                    }
+                    if (fish && fish.classList.contains('fish') && timeLeft > 0) {
+                        score++;
+                        scoreDisplay.textContent = 'Score: ' + score;
+                        fish.parentNode.removeChild(fish);
+                        otter.src = 'otter-game-images/images.jpeg';
+                        setTimeout(() => {
+                            otter.src = 'otter-game-images/images.jpeg';
+                        }, 700);
+                        const newFish = createFish('good');
+                        fishArea.appendChild(newFish);
+                    }
+                });
+            };
         </script>
     </section>
     <footer>
-        I'm otterly delighted you visited my site!
+        🦦 I'm otterly delighted you visited my site! 🦦
     </footer>
 </body>
 </html>
