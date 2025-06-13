@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isabella Love Otters</title>
+    <title>Earth's Cutest Animal: Otters</title>
     <style>
         body {
             background: #e0f7fa;
@@ -15,21 +15,6 @@
             min-height: 100vh;
             margin: 0;
             position: relative;
-        }
-        .flower-decor {
-            position: absolute;
-            width: 100vw;
-            left: 0;
-            display: flex;
-            justify-content: space-between;
-            pointer-events: none;
-            font-size: 2.5rem;
-        }
-        .flower-top {
-            top: 10px;
-        }
-        .flower-bottom {
-            bottom: 10px;
         }
         h1 {
             color: #006064;
@@ -47,15 +32,189 @@
             font-size: 2rem;
             margin-bottom: 1rem;
         }
+        nav {
+            width: 100vw;
+            background: #006064;
+            padding: 1.2rem 0; /* Increased padding for larger nav */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 2.5rem; /* More space between links */
+            font-weight: bold;
+            font-size: 1.5rem; /* Larger font size */
+        }
+        section {
+            max-width: 600px;
+            background: #006064; /* Match nav bar color */
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 2rem;
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+        section h2 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        section p {
+            color: #e0f7fa;
+            font-size: 1.1rem;
+        }
+        .spacer {
+            height: 4.2rem; /* Adjusted for larger nav */
+        }
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #score {
+            font-size: 1.3rem;
+            color: #006064;
+            margin-bottom: 1rem;
+        }
+        #fish-area {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .fish {
+            width: 60px;
+            cursor: grab;
+        }
+        #otter-drop {
+            width: 140px;
+            border-radius: 20px;
+            border: 3px solid #8d6e63;
+            background: #fff;
+            padding: 8px;
+        }
+        footer {
+            width: 100%;
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem 0;
+            color: #e0f7fa;
+            background: #006064;
+            font-size: 2rem;
+            border-radius: 0 0 16px 16px;
+            font-family: 'Pacifico', cursive, 'Segoe UI', Arial, sans-serif;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
-    <div class="flower-decor flower-top">🌸🌼🌷🌻🌺<span></span>🌺🌻🌷🌼🌸</div>
-    <div class="otter-decor">🦦🦦🦦</div>
-    <h1>Isabella Love Otters</h1>
-    <img class="otter-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Cute otter">
-    <div class="otter-decor">🦦🦦🦦</div>
-    <p style="font-size:1.2rem; color:#004d40; margin-top:2rem;">I'm otterly delighted you visited my site!</p>
-    <div class="flower-decor flower-bottom">🌸🌼🌷🌻🌺<span></span>🌺🌻🌷🌼🌸</div>
+    <nav>
+        <a href="#history">History of Otters</a>
+        <a href="#types">Types of Otters</a>
+        <a href="#love">Love of Otters from the Author</a>
+        <a href="#game">Game</a>
+    </nav>
+    <div class="spacer"></div> <!-- Spacer for fixed nav -->
+    <div style="display: flex; align-items: center; justify-content: flex-start; width: 100%; max-width: 900px; margin-top: 2rem; margin-bottom: 1.5rem;">
+        <h1 style="flex: 1; text-align: left; margin: 0;">Earth's Cutest Animal: Otters</h1>
+        <img class="otter-img" src="360_F_907793093_RnqmCuOT459M0U2nkCBpBUE4hImvOFqI.jpg" alt="Real life otter" style="margin-left: 2rem; max-width: 480px; width: 65vw;">
+    </div>
+    <section id="history">
+        <h2>History of Otters</h2>
+        <p>Otters have existed for millions of years, adapting to aquatic life with playful and social behaviors. Their history is rich and fascinating!</p>
+        <p>Fossil records show that otters first appeared during the Miocene epoch, about 23 million years ago. Over time, they evolved to thrive in both freshwater and marine environments. Otters are part of the Mustelidae family, which also includes weasels and badgers. Ancient cultures often admired otters for their agility and intelligence, and they appear in folklore and mythology around the world.</p>
+        <p>Today, otters are found on every continent except Australia and Antarctica, and their playful nature continues to delight people everywhere.</p>
+    </section>
+    <section id="types">
+        <h2>Types of Otters</h2>
+        <p>There are 13 species of otters, including the sea otter, river otter, and giant otter. Each has unique traits and habitats.</p>
+    </section>
+    <section id="love">
+        <h2>Love of Otters from the Author</h2>
+        <p>The author adores otters for their cuteness, playfulness, and loving nature. Otters bring joy and inspiration every day!</p>
+    </section>
+    <section id="game">
+        <h2>Game</h2>
+        <p>Drag the fish to the otter to feed it and earn points!</p>
+        <p style="color: #b2ebf2; font-size: 1rem;">Did you know? Otters love to eat fish, and they are excellent hunters! Try to feed the otter as many fish as you can.</p>
+        <div id="game-container" style="display: flex; flex-direction: column; align-items: center;">
+            <div id="timer" style="font-size: 1.3rem; color: #e0f7fa; margin-bottom: 0.5rem;">Time: 30</div>
+            <div id="score" style="font-size: 1.3rem; color: #e0f7fa; margin-bottom: 1rem;">Score: 0</div>
+            <div style="display: flex; gap: 2rem; align-items: flex-end;">
+                <div id="fish-area" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/12/13/58/fish-147277_1280.png" draggable="true" class="fish" style="width: 60px; cursor: grab;" alt="Fish">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/12/13/58/fish-147277_1280.png" draggable="true" class="fish" style="width: 60px; cursor: grab;" alt="Fish">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/12/13/58/fish-147277_1280.png" draggable="true" class="fish" style="width: 60px; cursor: grab;" alt="Fish">
+                </div>
+                <img id="otter-drop" src="https://pngimg.com/d/otter_PNG16.png" style="width: 140px; border-radius: 20px; border: 3px solid #8d6e63; background: #fff; padding: 8px;" alt="Otter">
+            </div>
+        </div>
+        <div id="end-screen" style="display:none; margin-top:2rem; background:#004d40; color:#e0f7fa; padding:2rem; border-radius:16px; font-size:1.5rem;"></div>
+        <script>
+            let score = 0;
+            let timeLeft = 30;
+            let timerInterval;
+            const scoreDisplay = document.getElementById('score');
+            const timerDisplay = document.getElementById('timer');
+            const otter = document.getElementById('otter-drop');
+            const fishArea = document.getElementById('fish-area');
+            const endScreen = document.getElementById('end-screen');
+            function startTimer() {
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    timerDisplay.textContent = 'Time: ' + timeLeft;
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        endGame();
+                    }
+                }, 1000);
+            }
+            function endGame() {
+                // Disable dragging
+                document.querySelectorAll('.fish').forEach(fish => fish.setAttribute('draggable', 'false'));
+                otter.style.opacity = 0.5;
+                fishArea.style.opacity = 0.5;
+                endScreen.style.display = 'block';
+                endScreen.innerHTML = `<strong>Time's up!</strong><br>Your final score: <span style='color:#ffd600;'>${score}</span><br><button onclick='location.reload()' style='margin-top:1rem; padding:0.5rem 1.5rem; font-size:1rem; border-radius:8px; border:none; background:#ffd600; color:#006064; font-weight:bold; cursor:pointer;'>Play Again</button>`;
+            }
+            document.querySelectorAll('.fish').forEach(fish => {
+                fish.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('text/plain', 'fish');
+                });
+            });
+            otter.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+            otter.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const fish = document.querySelector('.fish[draggable="true"]');
+                if (fish && timeLeft > 0) {
+                    fish.parentNode.removeChild(fish);
+                    score++;
+                    scoreDisplay.textContent = 'Score: ' + score;
+                    // Add a new fish after drop
+                    const newFish = document.createElement('img');
+                    newFish.src = fish.src;
+                    newFish.draggable = true;
+                    newFish.className = 'fish';
+                    newFish.style.width = '60px';
+                    newFish.style.cursor = 'grab';
+                    newFish.alt = 'Fish';
+                    newFish.addEventListener('dragstart', (e) => {
+                        e.dataTransfer.setData('text/plain', 'fish');
+                    });
+                    fishArea.appendChild(newFish);
+                }
+            });
+            startTimer();
+        </script>
+    </section>
+    <footer>
+        I'm otterly delighted you visited my site!
+    </footer>
 </body>
 </html>
